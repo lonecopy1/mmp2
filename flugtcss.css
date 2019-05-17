@@ -1,0 +1,16 @@
+* {margin:0;padding:0;}
+.clear {clear:both;}
+
+body {
+    background-color: blue;
+}
+
+#sortBox {
+    background-color: black;
+    max-height: 200px;
+}
+
+#flugtLogo {
+    margin: 25px 25px 35px 25px;
+    height: 100px;
+}s
