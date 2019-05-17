@@ -2,7 +2,8 @@
 .clear {clear:both;}
 
 body {
-    background-color: blue;
+    background-color: #f6f6f6;
+    font-family: sans-serif;
 }
 
 #sortBox {
@@ -11,6 +12,7 @@ body {
 }
 
 #flugtLogo {
-    margin: 25px 25px 35px 25px;
-    height: 100px;
-}s
+    margin: 20px 20px 30px 20px;
+    height: 70px;
+}
+
