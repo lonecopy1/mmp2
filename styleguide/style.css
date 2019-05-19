@@ -78,13 +78,13 @@ section.styleguide {
     padding:0;
 }
 
-article section.info {
+article div.info {
     display:flex;
     margin:20px 0;
 
 }
 
-article section.info > div {
+article div.info > div {
     width:50%;
     padding:10px 20px;
     flex-grow:1;
@@ -96,10 +96,15 @@ article section.info > div {
 }
 
 h1 {
-    font-size:28px;
+    font-size:43px;
+    border-bottom: 1px solid black;
 }
 
 h2 {
+    font-size:28px;
+}
+
+h3 {
     font-size:20px;
     padding:3px 0;
 }
