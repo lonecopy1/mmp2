@@ -1,0 +1,158 @@
+html {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    min-height:100%;
+}
+
+*, *:before, *:after {
+    margin:0;
+    padding:0;
+    box-sizing: inherit;
+    /* margin & padding indgår i height & width i alle elementer*/
+}
+
+body {
+    background-color:#f4f5f5f5;
+    font-family:Proxima Nova;
+    font-size:16px;
+    min-height:100%;
+    padding:2.5% 0 0;
+}
+
+.clear {
+    clear:both;
+}
+
+.con {
+    box-sizing: border-box;
+    margin:0 auto;
+    height:100%;
+    display:flex;
+    max-width: 1100px;
+}
+
+/******** Navigation *********/
+
+nav {
+    border-right:1px solid black;
+    border-radius: 1px;
+}
+
+nav ul {
+    list-style-type: none;
+    display:flex;
+    flex-direction: column;
+}
+
+nav ul > li a {
+    display:inline-block;
+    padding:10px 30px 10px;
+    text-decoration: none;
+    font-size:18px;
+    color:black;
+    text-align: center;
+}
+
+li a:hover, li a:active {
+    color:#B86427;
+}
+
+/******** Styleguide Section *********/
+
+section.styleguide {
+    height:100%;
+    width:100%;
+    margin: 0 2%;
+}
+
+.styleguide article {
+    padding-bottom:10px;
+    margin-bottom:10px;
+    border-bottom:1px solid black;
+    border-radius:1px;
+}
+
+.styleguide article:last-child {
+    border:none;
+    padding:0;
+}
+
+article section.info {
+    display:flex;
+    margin:20px 0;
+
+}
+
+article section.info > div {
+    width:50%;
+    padding:10px 20px;
+    flex-grow:1;
+}
+
+.code {
+    border-left:3px solid #f8d747;
+    background-color: #f2f4ba;
+}
+
+h1 {
+    font-size:28px;
+}
+
+h2 {
+    font-size:20px;
+    padding:3px 0;
+}
+
+/******** Elements *********/
+
+.colors {
+    display:flex;
+    flex-wrap:wrap;
+}
+
+.colors > .circle {
+    height:120px;
+    width:120px;
+    text-align: center;
+    line-height:275px;
+    border-radius: 50%;
+    margin:10px 10px 50px 0;
+    color:black;
+}
+
+.circle:last-child {
+    margin-right:0;
+}
+
+.kant { /*Tilføj grå kant så det kan ses på denne baggrundsfarve*/
+    border:1px solid #999999;
+}
+
+/** Part of other future css file **/
+
+.bar {
+    display:flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    height:100px;
+}
+
+.bar > div {
+    color:#B86427;
+}
+
+.bar > div img {
+    flex:none;
+    display:block;
+    margin:0 auto;
+}
+
+.dark {
+    background-color:black;
+}
+
+.light {
+    background-color:#f6f6f6;
+}
