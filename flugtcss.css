@@ -16,3 +16,32 @@ body {
     height: 70px;
 }
 
+#kaldenavnInput {
+    margin: 10% 10% 0.5%;
+    float: left;
+}
+
+#kodeInput {
+    margin: 0.5% 10% 0.5%;
+    float: left;
+}
+
+.inputbokse {
+    height: 25px;
+    width: 78%;
+    padding-left: 2%;
+    border-radius: 3px;
+    border-style: hidden;
+    font-style: italic;
+}
+
+.groenknap {
+    height: 25px;
+    width: 15%;
+    border-radius: 3px;
+    border-style: hidden;
+    background-color: #3c9073;
+    color: white;
+    float: left;
+    margin: 0.5% 10% 10% 74%;
+}
