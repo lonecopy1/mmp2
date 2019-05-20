@@ -170,31 +170,3 @@ h3 {
 .kant { /*Tilføj grå kant så det kan ses på denne baggrundsfarve*/
     border:1px solid #999999;
 }
-
-/** Part of other future css file **/
-
-.bar {
-    display:flex;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    align-items: center;
-    height:100px;
-}
-
-.bar > div, .bar > p {
-    color:#B86427;
-}
-
-.bar > div img {
-    flex:none;
-    display:block;
-    margin:0 auto;
-}
-
-.dark {
-    background-color:black;
-}
-
-.light {
-    background-color:#f6f6f6;
-}
