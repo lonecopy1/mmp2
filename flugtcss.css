@@ -83,8 +83,7 @@ footer {
 }
 
 
-
-
+/* Navigationsbar */
 .bar {
     display:flex;
     flex-wrap: nowrap;
@@ -104,23 +103,6 @@ footer {
     height:55px;
 }
 
-.dark {
-    background-color:black;
-}
-
-.light {
-    background-color:#f6f6f6;
-}
-
-.map {
-    position:absolute;
-    background-image: url('img/map.png');
-    top:100px;
-    left:0;
-    right:0;
-    bottom:100px;
-}
-
 .top {
     position:absolute;
     top:0;
@@ -136,3 +118,115 @@ footer {
     right:0;
     z-index:1;
 }
+
+/* Versioner */
+
+.dark {
+    background-color:black;
+}
+
+.light {
+    background-color:#f6f6f6;
+}
+
+
+/* Kort over lejren */
+.map {
+    position:absolute;
+    background-image: url('img/map.png');
+    top:100px;
+    left:0;
+    right:0;
+    bottom:100px;
+}
+
+/* Elementer */
+
+.punkt {
+    height:100px;
+    width:100px;
+    background-image:url('img/punkt.png');
+    background-size: 50%;
+    background-repeat: no-repeat;
+}
+
+/* Vinduer */
+
+.window {
+    text-align: left;
+    background-color:#f5f4f4;
+    position:absolute;
+    border-radius: 3px;
+    display:none;
+}
+
+
+.close {
+    padding:1% 2%;
+    font-size:24px;
+    float:right;
+}
+
+/* Vindue til at hjælpe */
+
+.help {
+    padding:10px 20px;
+}
+
+.help:after {
+    content: '';
+    position: absolute;
+    bottom:0;
+	left: 50%;
+	border: 15px solid transparent;
+	border-top-color: #f5f4f4;
+	border-bottom: 0;
+	margin-left:-14px;
+	margin-bottom: -14px;
+}
+
+/* Vindue der indeholder informationer */
+
+.info {
+    top:2%;
+    left:0;
+    right:0;
+    width:95%;
+    margin:0 auto;
+    
+}
+
+.info > p, .info > button {
+    text-align: justify;
+    margin:2% 2%;
+}
+
+.window h1 {
+    padding: 1% 2%;
+    float:left;
+}
+
+.info > .media {
+    position:relative;
+    background-color:#333;
+    height:150px;
+}
+
+.play {
+    background-color:#d1404b;
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:60px;
+    height:60px;
+    margin-top:-30px;
+    margin-left:-30px;
+    border-radius: 50%;
+    color:white;
+    font-size:44px;
+    text-align: center;
+}
+
+/* Vindue til score */
+
+
