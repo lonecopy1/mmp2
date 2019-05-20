@@ -1,42 +1,57 @@
-dragElement(document.getElementById("map"));
+var AttachDragTo = (function () {
+    var _AttachDragTo = function (el) {
+        this.el = el;
+        this.mouse_is_down = false;
+        
+        this.init();
+    };
+    
+    _AttachDragTo.prototype = {
+        onMousemove: function (e) {
+            if ( !this.mouse_is_down ) return;
+            var tg = e.target,
+                x = e.clientX,
+                y = e.clientY;
+    
+            tg.style.backgroundPositionX = x - this.origin_x + this.origin_bg_pos_x + 'px';
+            tg.style.backgroundPositionY = y - this.origin_y + this.origin_bg_pos_y + 'px';
+        },
+    
+        onMousedown: function(e) {
+            this.mouse_is_down = true;
+            this.origin_x = e.clientX;
+            this.origin_y = e.clientY;
+        },
+    
+        onMouseup: function(e) {
+            var tg = e.target,
+                styles = getComputedStyle(tg);
+    
+            this.mouse_is_down = false;
+            this.origin_bg_pos_x = parseInt(styles.getPropertyValue('background-position-x'), 10);
+            this.origin_bg_pos_y = parseInt(styles.getPropertyValue('background-position-y'), 10);
+        },
+        
+        init: function () {
+            var styles = getComputedStyle(this.el);
+            this.origin_bg_pos_x = parseInt(styles.getPropertyValue('background-position-x'), 10);
+            this.origin_bg_pos_y = parseInt(styles.getPropertyValue('background-position-y'), 10);
+            
+            //attach events
+            this.el.addEventListener('mousedown', this.onMousedown.bind(this), false);
+            this.el.addEventListener('mouseup', this.onMouseup.bind(this), false);
+            this.el.addEventListener('mousemove', this.onMousemove.bind(this), false);
+        }
+    };
+    
+    return function ( el ) {
+        new _AttachDragTo(el);
+    };
+})();
 
-function dragElement(elmnt) {
-  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-  if (document.getElementById(elmnt.id + "map")) {
-    /* if present, the header is where you move the DIV from:*/
-    document.getElementById(elmnt.id + "map").onmousedown = dragMouseDown;
-  } else {
-    /* otherwise, move the DIV from anywhere inside the DIV:*/
-    elmnt.onmousedown = dragMouseDown;
-  }
 
-  function dragMouseDown(e) {
-    e = e || window.event;
-    e.preventDefault();
-    // get the mouse cursor position at startup:
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    document.onmouseup = closeDragElement;
-    // call a function whenever the cursor moves:
-    document.onmousemove = elementDrag;
-  }
-
-  function elementDrag(e) {
-    e = e || window.event;
-    e.preventDefault();
-    // calculate the new cursor position:
-    pos1 = pos3 - e.clientX;
-    pos2 = pos4 - e.clientY;
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    // set the element's new position:
-    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-  }
-
-  function closeDragElement() {
-    /* stop moving when mouse button is released:*/
-    document.onmouseup = null;
-    document.onmousemove = null;
-  }
-}
+/*** IMPLEMENTATION ***/
+//1. Get your element.
+var map = document.getElementById('map');
+//2. Attach the drag.
+AttachDragTo(map);
