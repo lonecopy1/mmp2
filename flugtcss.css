@@ -20,12 +20,13 @@ body {
 }
 
 #sortBox {
+    text-align: center;
     background-color: black;
     max-height: 200px;
 }
 
 #flugtLogo {
-    margin: 20px 20px 30px 20px;
+    margin: 30px;
     height: 70px;
 }
 
