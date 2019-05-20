@@ -15,8 +15,8 @@ html {
 .clear {clear:both;}
 
 body {
-    background-color: #f6f6f6;
-    font-family: sans-serif;
+    background-color: #f4f5f5;
+    font-family: 'Proxima Nova';
 }
 
 #sortBox {
@@ -29,32 +29,54 @@ body {
     height: 70px;
 }
 
-#kaldenavnInput {
-    margin: 10% 10% 0.5%;
-    float: left;
+.login {
+    margin:30% auto;
+    width:80%;
 }
 
-#kodeInput {
-    margin: 0.5% 10% 0.5%;
-    float: left;
+@media only screen and (min-width: 700px) {
+    .login {
+        margin:10% auto;
+    }
 }
 
 .inputbokse {
-    height: 25px;
-    width: 78%;
-    padding-left: 2%;
+    width: 100%;
+    margin:1.5% 0;
+    padding:2% 3%;
     border-radius: 3px;
     border-style: hidden;
+}
+
+.inputbokse::placeholder {
     font-style: italic;
 }
 
 .groenknap {
-    height: 25px;
-    width: 15%;
+    padding:2% 5%;
     border-radius: 3px;
     border-style: hidden;
     background-color: #3c9073;
     color: white;
-    float: left;
-    margin: 0.5% 10% 10% 74%;
+    float: right;
+    margin: 0.5% 0;
+}
+
+footer {
+    margin:2%;
+    height:30%;
+    position:absolute;
+    bottom:0;
+    right:0;
+    left:0;
+    background-image:url('img/pattern.png');
+    background-position: top left;
+    background-size: 200%;
+    z-index: -1;
+}
+
+@media only screen and (min-width: 700px) {
+    footer {
+        background-size:100%;
+    }
 }
