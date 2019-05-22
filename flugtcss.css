@@ -16,7 +16,7 @@ html {
 
 body {
     background-color: #f5f4f4;
-    font-family: 'Proxima Nova';
+    font-family: 'Proxima Nova', 'proxima-nova', sans-serif;
     font-size:16px;
 }
 
@@ -175,6 +175,9 @@ p {
     border-radius: 3px;
     max-width:95%;
     margin:2%;
+    display:none;
+    overflow-y: scroll;
+    max-height:95%;
 }
 
 .placeholder {
@@ -240,7 +243,7 @@ p {
     width:95%;
 }
 
-.info > p, .info > button {
+.info > p, .info > button, .info > div {
     text-align: justify;
     margin:2% 3%;
 }
@@ -254,6 +257,7 @@ p {
     position:relative;
     background-color:#333;
     height:150px;
+    margin:0;
 }
 
 .play {
@@ -271,6 +275,34 @@ p {
     text-align: center;
 }
 
+
 /* Vindue til score */
 
+#gruppeliste #you {
+    background-color:#f2f4ba;
+}
 
+#gruppeliste {
+    list-style-type: none;
+    border-radius: 3px;
+    margin-bottom: 3px;
+}
+
+#gruppeliste li {
+    display: flex;
+    width:100%;
+}
+
+#gruppeliste li span {
+    width:85%;
+    padding:2%;
+}
+
+#gruppeliste li span:first-child {
+    width:7.5%;
+}
+
+#gruppeliste li span:last-child {
+    text-align: right;
+    width:30%;
+}
