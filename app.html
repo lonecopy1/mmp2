@@ -23,11 +23,11 @@
             
             <!-- Search Window -->
             <div class="search" id="searchvindue">
-                <div class="light tekstboks" id="searchresult">
+                <div class="light tekstboks" id="searchResult">
                     <p>result</p>
                     <p>result</p>
                 </div>
-                <input type="text" class="inputbokse" placeholder="Find oplevelse...">
+                <input id="searchInput" type="text" class="inputbokse" placeholder="Find oplevelse..." onkeyup="installationsListe()">
                 <img class="close" src="icons/x.png" onclick="display(this)">
             </div>
         </div>
