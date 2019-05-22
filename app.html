@@ -11,13 +11,17 @@
         <div class="map" id="map">
             <img src="icons/punkt.png" class="punkt" id="kirke" onclick="display(this)">
             <img src="icons/punkt.png" class="punkt" id="kloak" onclick="display(this)">
-            <div class="window info" id="kirkevindue">
-                <h1>Kirkegården</h1><img class="close" src="icons/x.png" onclick="display(this)">
+            
+            <!-- Main Window -->
+            <div class="window info" id="mainVindue">
+                <h1 id="overskrift"></h1><img class="close" src="icons/x.png" onclick="display(this)">
                 <div class="clear"></div>
-                <div class="media"><img src="icons/play.png" class="play"></div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <button class="groenknap">Start quiz</button>
+                <div class="media" id="media"></div>
+                <div id="tekstindhold"></div>
+                <button class="groenknap" id="startknap">Start quiz</button>
             </div>
+            
+            <!-- Search Window -->
             <div class="search" id="searchvindue">
                 <div class="light tekstboks" id="searchresult">
                     <p>result</p>
@@ -26,10 +30,9 @@
                 <input type="text" class="inputbokse" placeholder="Find oplevelse...">
                 <img class="close" src="icons/x.png" onclick="display(this)">
             </div>
-            
         </div>
         
-<!-- Navigations bar -->
+        <!-- Navigations bars -->
         <div class="bar light top">
             <img src="img/kloak.png">
             <img src="img/kors.png">
@@ -44,5 +47,5 @@
     </body>
     <script src="map.js"></script>
     <script src="control.js"></script>
-    <script src="search.js"></script>
+    <!--<script src="search.js"></script>-->
 </html>
