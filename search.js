@@ -1,10 +1,10 @@
+var installationer = ["Kloak Syd", "Kloak Nord", "Kloak Øst", "Kloak Vest", "Lygtepæle", "Hestestald", "Kirkegård", "Mad transport"];
+var instalLen = installationer.length;
+
 function installationsListe() {
-    var installationer = ["Kloak Syd", "Kloak Nord", "Kloak Øst", "Kloak Vest", "Lygtepæle", "Hestestald", "Kirkegård", "Mad transport"];
-    var instalLen = installationer.length;
-    console.log = installationer;
     
-    var input, filter, a, i, txtValue, output;
-    input = document.getElementById("searchvindue");
+    /*var input, filter, a, i, txtValue, output;
+    input = document.getElementById("searchInput");
     filter = input.value.toUpperCase();
     
     
@@ -20,4 +20,5 @@ function installationsListe() {
         }
     }
     output = document.getElementById("searchresult");
+    output.innerHTML = '<p>' + */
 }
