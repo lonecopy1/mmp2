@@ -9,14 +9,14 @@ html {
     margin:0;
     padding:0;
     box-sizing: inherit;
-    /* margin & padding indgår i height & width i alle elementer*/
+    /* padding etc indgår i height & width i alle elementer*/
 }
 
 .clear {clear:both;}
 
 body {
     background-color: #f5f4f4;
-    font-family: 'Proxima Nova', 'proxima-nova', sans-serif;
+    font-family: 'proxima-nova', 'Proxima Nova', sans-serif;
     font-size:16px;
 }
 
@@ -154,6 +154,7 @@ p {
 .map {
     position:absolute;
     background-image: url('img/map.png');
+    background-position: center;
     top:100px;
     left:0;
     right:0;
@@ -164,6 +165,20 @@ p {
 
 .punkt {
     height:65px;
+}
+
+#kirke {
+    position:absolute;
+    left:10%;
+    right:10%;
+    top:10%;
+}
+
+#kloak {
+    position:absolute;
+    left:40%;
+    right:40%;
+    top:50%;
 }
 
 /* Vinduer */
@@ -274,6 +289,25 @@ p {
     font-size:44px;
     text-align: center;
 }
+
+.svarmuligheder {
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    display:none;
+}
+
+.svar {
+    width:48%;
+    border:0;
+    padding:3% 2%;
+    margin-bottom:3%;
+    background-color:#1b768b;
+    color:white;
+    border-radius: 3px;
+    font-weight: 500;
+}
+
 
 
 /* Vindue til score */

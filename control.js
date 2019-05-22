@@ -5,6 +5,8 @@ var tekst = document.getElementById('tekstindhold');
 var startknap = document.getElementById('startknap');
 var i;
 var insertliste;
+var playbutton = false;
+var searchvindue = false;
 
 var gruppeliste = [
     "Børge Jensen",
@@ -23,7 +25,15 @@ var gruppeliste = [
 ]
 
 function display(element) {
-    document.getElementById('searchvindue').style.display = 'none';
+    if (searchvindue) {
+        document.getElementById('searchvindue').style.display = 'none';
+        searchvindue = false;
+    }
+    if (playbutton) {
+        document.getElementById('play').style.display = 'none';
+        playbutton = false;
+    }
+    
    if (element.tagName == 'IMG' && element.className == 'close') {/* Hvis man trykker på kryds */
         element.parentNode.style.display = 'none';
     } else if (element.className == 'punkt') { /* Hvis man trykker på et punkt */
@@ -33,6 +43,7 @@ function display(element) {
         if (element.id == 'search') { /* Hvis det er søg skal der åbnes sin egen vindue*/
             document.getElementById('mainVindue').style.display = 'none';
             document.getElementById(element.id + 'vindue').style.display = 'block';
+            searchvindue = true;
         } else {
             document.getElementById('mainVindue').style.display = 'block';
             createContent(element.id);
@@ -41,11 +52,12 @@ function display(element) {
     
 }
 
-function createContent(contentID) {
+function createContent(contentID) { 
     if (contentID == 'kirke') { /* Indhold til kirkegården */
         overskrift.innerHTML = 'Kirkegården';
         media.style.display = 'block';
-        media.innerHTML = '<img src="icons/play.png" class="play">';
+        media.innerHTML = '<img src="icons/play.png" class="play" id="play">';
+        playbutton = true;
         tekst.innerHTML = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.';
         startknap.style.display = 'block';
     } else if (contentID == 'kloak') { /* Indhold til kloakerne */
@@ -73,8 +85,13 @@ function createContent(contentID) {
     } 
     else {
         overskrift.innerHTML = 'Fejl';
-        tekst.innerHTML = 'Dette punkt er gået i fejl';
+        tekst.innerHTML = 'Dette vindue er endnu ikke oprettet eller der er sket en fejl';
     }
 }
+
+function quiz(installation) {
+    console.log(installation);
+}
+
 
 /*element.src = 'icons/punktgreen.png';*/
