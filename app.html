@@ -6,32 +6,43 @@
        <link rel="stylesheet" href="https://use.typekit.net/sgj6hfx.css">
        <title>Login - Flygtningemuseet</title>
        <link href="flugtcss.css" rel="stylesheet" type="text/css">
-        
     </head>
     <body> 
         <div class="map" id="map">
-            <div id="lars" class="punkt"></div>
-            <div class="window info">
-                <h1>Header</h1><span class="close">x</span>
+            <img src="icons/punkt.png" class="punkt" id="kirke" onclick="display(this)">
+            <img src="icons/punkt.png" class="punkt" id="kloak" onclick="display(this)">
+            <div class="window info" id="kirkevindue">
+                <h1>Kirkegården</h1><img class="close" src="icons/x.png" onclick="display(this)">
                 <div class="clear"></div>
-                <div class="media"><div class="play">&raquo;</div></div>
+                <div class="media"><img src="icons/play.png" class="play"></div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                 <button class="groenknap">Start quiz</button>
             </div>
+            <div class="search" id="searchvindue">
+                <div class="light tekstboks" id="searchresult">
+                    <p>result</p>
+                    <p>result</p>
+                </div>
+                <input type="text" class="inputbokse" placeholder="Find oplevelse...">
+                <img class="close" src="icons/x.png" onclick="display(this)">
+            </div>
+            
         </div>
         
 <!-- Navigations bar -->
-        <div class="bar dark top">
-            <img src="img/circle.png">
-            <img src="img/circle.png">
-            <img src="img/circle.png">
-            <img src="img/circle.png">
+        <div class="bar light top">
+            <img src="img/kloak.png">
+            <img src="img/kors.png">
+            <img src="img/lygtepaele.png">
+            <img src="img/doer.png">
         </div>        
-        <div class="bar dark bottom">
-            <img src="img/search.png">
-            <img src="img/star.png">
-            <img src="img/settings.png">
+        <div class="bar light bottom">
+            <img src="icons/search.png" id="search" onclick="display(this)">
+            <img src="icons/star.png" id="leaderboard" onclick="display(this)">
+            <img src="icons/settings.png" id="settings" onclick="display(this)">
         </div>
     </body>
     <script src="map.js"></script>
+    <script src="control.js"></script>
+    <script src="search.js"></script>
 </html>
