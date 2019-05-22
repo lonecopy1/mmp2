@@ -2,23 +2,16 @@ var installationer = ["Kloak Syd", "Kloak Nord", "Kloak Øst", "Kloak Vest", "Ly
 var instalLen = installationer.length;
 
 function installationsListe() {
-    
-    /*var input, filter, a, i, txtValue, output;
-    input = document.getElementById("searchInput");
-    filter = input.value.toUpperCase();
-    
-    
+    var input, filter, i;
+    input = document.getElementById("searchInput").value;
+    filter = input.toUpperCase();
+    console.log(filter);
     
     for (i = 0; i < instalLen; i++) {
-        a = installationer.forEach;
-        txtValue = a.textContent || a.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
         
-            installationer[i].style.display = "";
-        } else {
-            installationer[i].style.display = "none";
-        }
+    
+        
+        
     }
-    output = document.getElementById("searchresult");
-    output.innerHTML = '<p>' + */
+    /* document.getElementById("searchResult").innerHTML = */
 }
