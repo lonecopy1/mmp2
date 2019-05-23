@@ -7,6 +7,7 @@ var i;
 var insertliste;
 var playbutton = false;
 var searchvindue = false;
+var quizzen;
 
 var gruppeliste = [
     "Børge Jensen",
@@ -25,6 +26,7 @@ var gruppeliste = [
 ]
 
 function display(element) {
+    document.getElementsByClassName('svarmuligheder')[0].style.display = 'none';
     if (searchvindue) {
         document.getElementById('searchvindue').style.display = 'none';
         searchvindue = false;
@@ -33,7 +35,6 @@ function display(element) {
         document.getElementById('play').style.display = 'none';
         playbutton = false;
     }
-    
    if (element.tagName == 'IMG' && element.className == 'close') {/* Hvis man trykker på kryds */
         element.parentNode.style.display = 'none';
     } else if (element.className == 'punkt') { /* Hvis man trykker på et punkt */
@@ -55,6 +56,7 @@ function display(element) {
 function createContent(contentID) { 
     if (contentID == 'kirke') { /* Indhold til kirkegården */
         overskrift.innerHTML = 'Kirkegården';
+        quizzen = overskrift.innerHTML;
         media.style.display = 'block';
         media.innerHTML = '<img src="icons/play.png" class="play" id="play">';
         playbutton = true;
@@ -62,6 +64,7 @@ function createContent(contentID) {
         startknap.style.display = 'block';
     } else if (contentID == 'kloak') { /* Indhold til kloakerne */
         overskrift.innerHTML = 'Kloakerne';
+        quizzen = overskrift.innerHTML;
         media.style.display = 'block';
         tekst.innerHTML = 'Kloakerne kan stadig ses';
         startknap.style.display = 'block';
@@ -89,8 +92,14 @@ function createContent(contentID) {
     }
 }
 
-function quiz(installation) {
-    console.log(installation);
+function quiz(inst) {
+    overskrift.innerHTML = quizzen;
+    if (document.getElementById('play')) {
+        document.getElementById('play').style.display = 'none';
+    }
+    tekst.innerHTML = "Hvad er det rigtige svar for denne installation?"
+    startknap.style.display = 'none';
+    document.getElementsByClassName('svarmuligheder')[0].style.display = 'flex';
 }
 
 

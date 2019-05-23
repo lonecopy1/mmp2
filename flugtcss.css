@@ -209,6 +209,14 @@ p {
     z-index:2;
 }
 
+.searchclose {
+    position:absolute;
+    right:0;
+    margin:3% 3%;
+    line-height:16px;
+}
+
+
 /* Vindue til at hjælpe */
 
 .help {
