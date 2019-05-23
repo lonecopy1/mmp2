@@ -31,5 +31,14 @@ function installationsListe() {
         } else {
             li[i].style.display = "none";
         }
+        
+        if (!searchInput.value) { /* Hvis der ikke (!) er et input */
+            ul.style.display = 'none';
+            document.getElementById('test').style.visibility = "hidden";
+        } else {
+            ul.style.display = 'block';
+            document.getElementById('test').style.visibility = "visible";
+        }
+        
     }
 }

@@ -346,4 +346,5 @@ p {
 
 #searchResult {
     visibility: hidden;
+    list-style-type: none;
 }
