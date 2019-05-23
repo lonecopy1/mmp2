@@ -27,14 +27,9 @@ function installationsListe() {
         txtValue = a.textContent || a.innerText;
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
             document.getElementById("searchResult").style.visibility = "visible";
-            document.getElementsByClassName("tekstboks").style.visibility = "visible";
             li[i].style.display = "";
         } else {
             li[i].style.display = "none";
         }
     }
-}
-
-function testTest() {
-    for ()
 }
