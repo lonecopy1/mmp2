@@ -91,6 +91,7 @@ p {
 .tekstboks {
     padding-top:2%;
     padding-bottom:2%;
+    visibility: hidden;
 }
 
 .search .tekstboks {
@@ -339,4 +340,10 @@ p {
 #gruppeliste li span:last-child {
     text-align: right;
     width:30%;
+}
+
+/* Søgefunktion */
+
+#searchResult {
+    visibility: hidden;
 }
