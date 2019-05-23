@@ -5,8 +5,8 @@
         <meta charset="utf-8">
         <link rel="shortcut icon" href="ico_white.ico" type="image/x-icon">
         <title>Style guide</title>
-        <link rel="stylesheet" href="../flugtcss.css">
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="../flugtcss.css">
         <meta name="author" content="Clara Villumsen & Lone Iversen">
     </head>
     <body>
@@ -73,6 +73,7 @@
                             &lt;/div&gt;
                         </div>
                         <div class="note">
+                            <h4>Note</h4>
                             <p>Der er ingen grå kant.<br>Der kan bruges f.eks. "div" eller "p" inde i denne bar for at placere de forskellige elementer. Disse to eksempler får teksten til at være #B86427.<br>"img" tag er også tilladt.<br>Det er tilladt at bruge så lidt eller så mange elementer som der er brug for, da elementerne bliver på én række.</p>
                         </div>
                     </div>
@@ -101,6 +102,7 @@
                             &lt;/div&gt;
                         </div>
                         <div class="note">
+                            <h4>Note</h4>
                             <p>Der kan bruges f.eks. "div" eller "p" inde i denne bar for at placere de forskellige elementer. Disse to eksempler får teksten til at være #B86427.<br>"img" tag er også tilladt.<br>Det er tilladt at bruge så lidt eller så mange elementer som der er brug for, da elementerne bliver på én række.</p>
                         </div>
                     </div>
@@ -109,39 +111,71 @@
                 <article id="vinduer">
                     <h2>Vinduer</h2>
                     <h3>Almindelig pop-up</h3>
-                    <div class="pop vindue">
-                        its a window!
+                    <div class="window info kant" id="mainVindue">
+                        <h1 id="overskrift">Her er overskriften</h1><img class="close" src="../icons/x.png">
+                        <div class="clear"></div>
+                        <div id="tekstindhold">Her er indhold</div>
                     </div>
                     <div class="info">
                         <div class="code">
-                            insert code
+                            &lt;div class="window info" id="mainVindue"&gt;<br>
+                                &emsp;&lt;h1 id="overskrift"&gt;Overskrift&lt;/h1&gt;&lt;img class="close" src="icons/x.png" onclick="display(this)"&gt;<br>
+                                &emsp;&lt;div class="clear">&lt;/div&gt;<br>
+                                &emsp;&lt;div class="media" id="media"&gt;&lt;/div&gt;<br>
+                                &emsp;&lt;div id="tekstindhold"&gt;Her kommer indhold ind&lt;/div&gt;<br>
+                                &emsp;&lt;button class="groenknap" id="startknap" onclick="quiz(this)"&gt;Start quiz&lt;/button&gt;<br>
+                                &emsp;&lt;div class="svarmuligheder"&gt;<br>
+                                    &emsp;&emsp;&lt;button class="svar"&gt;Svar mulighed 1&lt;/button&gt;<br>
+                                    &emsp;&emsp;&lt;button class="svar"&gt;Svar mulighed 2&lt;/button&gt;<br>
+                                    &emsp;&emsp;&lt;button class="svar"&gt;Svar mulighed 3&lt;/button&gt;<br>
+                                    &emsp;&emsp;&lt;button class="svar"&gt;Svar mulighed 4&lt;/button&gt;<br>
+                                &emsp;&lt;/div&gt;<br>
+                            &lt;/div&gt;
                         </div>
                         <div class="note">
-                            <p>insert description</p>
+                            <h4>Note</h4>
+                            <p>OBS: Der er ingen grå kant på boksen<br>Alt indhold giver genereret via Javascript. Skal indeholde tags af alle de forskellige elementer som vinduet kan indeholde. Javascript skjuler og gemmer diverse elementer alt efter hvad der er brug for.</p>
                         </div>
                     </div>
-                    <h3>Leaderboard</h3>
-                    <div class="pop vindue">
-                        its a window!
+                    <h3>Søgefunktionen</h3>
+                    <div class="search" id="searchvindue">
+                        <div class="light tekstboks kant" id ="test">
+                            <ul id="searchResult">
+                               <li><p>Kloak Syd</p></li>
+                               <li><p>Kloak Nord</p></li>
+                               <li><p>Kloak Vest</p></li>
+                               <li><p>Kloak Øst</p></li>
+                               <li><p>Lygtepæle</p></li>
+                               <li><p>Hestestald</p></li>
+                               <li><p>Kirkegård</p></li>
+                               <li><p>Mad transport</p></li>
+                            </ul>
+                        </div>
+                        <input id="searchInput" type="text" class="inputbokse" placeholder="Find oplevelse...">
+                        <img class="close searchclose" src="../icons/x.png">
                     </div>
                     <div class="info">
                         <div class="code">
-                            insert code
+                            &lt;div class="search" id="searchvindue"&gt;<br>
+                                &emsp;&lt;div class="light tekstboks kant" id ="test"&gt;<br>
+                                    &emsp;&emsp;&lt;ul id="searchResult"&gt;<br>
+                                       &emsp;&emsp;&emsp;&lt;li>&lt;p>Kloak Syd&lt;/p&gt;&lt;/li&gt;<br>
+                                       &emsp;&emsp;&emsp;&lt;li>&lt;p>Kloak Nord&lt;/p&gt;&lt;/li&gt;<br>
+                                       &emsp;&emsp;&emsp;&lt;li>&lt;p>Kloak Vest&lt;/p&gt;&lt;/li&gt;<br>
+                                       &emsp;&emsp;&emsp;&lt;li>&lt;p>Kloak Øst&lt;/p&gt;&lt;/li&gt;<br>
+                                       &emsp;&emsp;&emsp;&lt;li>&lt;p>Lygtepæle&lt;/p&gt;&lt;/li&gt;<br>
+                                       &emsp;&emsp;&emsp;&lt;li>&lt;p>Hestestald&lt;/p&gt;&lt;/li&gt;<br>
+                                       &emsp;&emsp;&emsp;&lt;li>&lt;p>Kirkegård&lt;/p&gt;&lt;/li&gt;<br>
+                                       &emsp;&emsp;&emsp;&lt;li>&lt;p>Mad transport&lt;/p&gt;&lt;/li&gt;<br>
+                                    &emsp;&emsp;&lt;/ul&gt;<br>
+                                &emsp;&lt;/div&gt;<br>
+                                &emsp;&emsp;&lt;input id="searchInput" type="text" class="inputbokse" placeholder="Find oplevelse..."&gt;<br>
+                                &emsp;&emsp;&lt;img class="close searchclose" src="icons/x.png"&gt;<br>
+                            &lt;/div&gt;
                         </div>
                         <div class="note">
-                            <p>insert description</p>
-                        </div>
-                    </div>
-                    <h3>Hjælpevindue</h3>
-                    <div class="pop vindue">
-                        its a window!
-                    </div>
-                    <div class="info">
-                        <div class="code">
-                            insert code
-                        </div>
-                        <div class="note">
-                            <p>insert description</p>
+                            <h4>Note</h4>
+                            <p>OBS: Der er ingen grå kant!<br>Alle ting der kan søges for indsættes i ul. Indeholder et tekstfelt. Se Inputfelter.</p>
                         </div>
                     </div>
                 </article>
@@ -155,31 +189,56 @@
                             &lt;input type="text" class="inputbokse" placeholder="Her kan du tilføje noget tekst!"&gt;
                         </div>
                         <div class="note">
+                            <h4>Note</h4>
                             <p>Super smart inputfelt til alm. tekst lavet af Clara</p>
                         </div>
                     </div>
-                    <h3>Knap</h3>
-                    <div class="pop vindue">
-                        Flotte knapper indsættes her
+                    <h3>Luk knappen</h3>
+                    <div class="keephere">
+                        <img class="close" src="../icons/x.png">
                     </div>
                     <div class="info">
                         <div class="code">
-                            insert code
+                            &lt;img class="close" src="icons/x.png" onclick="display(this)"&gt;
                         </div>
                         <div class="note">
-                            <p>Woooaaw</p>
+                            <h4>Note</h4>
+                            <p>Luk knappen har en speciel javascript funktion som skjuler knappens "parent", altså det element som den sidder indeni. Den sidder desuden altid til højre.</p>
                         </div>
                     </div>
-                    <h3>Et eller andet</h3>
-                    <div class="pop vindue">
-                        Noget..?
+                    <h3>Grøn knap</h3>
+                    <div class="keephere">
+                        <button class="groenknap">Grøn knap</button>
                     </div>
                     <div class="info">
                         <div class="code">
-                            insert code
+                            &lt;button class="groenknap"&gt;Grøn knap&lt;/button&gt;
                         </div>
                         <div class="note">
-                            <p>insert description</p>
+                            <p>Den grønne knap skal altid være til højre på et vindue eller skærm og være en "positiv" knap handling.</p>
+                        </div>
+                    </div>
+                    <h3>Knappegruppe</h3>
+                    <div class="keephere">
+                        <div class="svarmuligheder">
+                            <button class="svar">Svar mulighed 1</button>
+                            <button class="svar">Svar mulighed 2</button>
+                            <button class="svar">Svar mulighed 3</button>
+                            <button class="svar">Svar mulighed 4</button>
+                        </div>
+                    </div>
+                    <div class="info">
+                        <div class="code">
+                            &lt;div class="svarmuligheder"&gt;<br>
+                                &emsp;&lt;button class="svar">Svar mulighed 1&lt;/button&gt;<br>
+                                &emsp;&lt;button class="svar">Svar mulighed 2&lt;/button&gt;<br>
+                                &emsp;&lt;button class="svar">Svar mulighed 3&lt;/button&gt;<br>
+                                &emsp;&lt;button class="svar">Svar mulighed 4&lt;/button&gt;<br>
+                            &lt;/div&gt;
+                        </div>
+                        <div class="note">
+                            <h4>Note</h4>
+                            <p>Når gruppering af knapper behandles. Der findes 2 knapper per række.</p>
                         </div>
                     </div>
                 </article>
