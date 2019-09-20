@@ -3,11 +3,12 @@ var overskrift = document.getElementById('overskrift');
 var media = document.getElementById('media');
 var tekst = document.getElementById('tekstindhold');
 var startknap = document.getElementById('startknap');
+var mainVindue = document.getElementById('mainVindue');
+
 var i;
 var insertliste;
 var playbutton = false;
 var searchvindue = false;
-var quizzen;
 
 var gruppeliste = [
     "Børge Jensen",
@@ -26,49 +27,56 @@ var gruppeliste = [
 ]
 
 function display(element) {
-    document.getElementsByClassName('svarmuligheder')[0].style.display = 'none';
-    if (searchvindue) {
-        document.getElementById('searchvindue').style.display = 'none';
-        searchvindue = false;
-    }
-    if (playbutton) {
-        document.getElementById('play').style.display = 'none';
-        playbutton = false;
-    }
-   if (element.tagName == 'IMG' && element.className == 'close') {/* Hvis man trykker på kryds */
+    clearPops()
+    media.style.display = 'block';
+
+   // Hvis man trykker på kryds ikonet
+   if (element.tagName == 'IMG' && element.className == 'close') {
         element.parentNode.style.display = 'none';
-    } else if (element.className == 'punkt') { /* Hvis man trykker på et punkt */
-        document.getElementById('mainVindue').style.display = 'block';
-        createContent(element.id);
-    } else if (element.parentNode.classList.contains('bar')) { /* Hvis man trykker på et icon i baren */
-        if (element.id == 'search') { /* Hvis det er søg skal der åbnes sin egen vindue*/
-            document.getElementById('mainVindue').style.display = 'none';
+    }
+    
+    // Hvis man trykker på et punkt
+    else if (element.className == 'punkt') {
+        mainVindue.style.display = 'block';
+        createContentForPunkt(element.id);
+    }
+    
+    // Hvis man trykker på et ikon i baren
+    else if (element.parentNode.classList.contains('bar')) {
+        if (element.id == 'search') { // Hvis det er søg skal der åbnes et specielt vindue
+            mainVindue.style.display = 'none';
             document.getElementById(element.id + 'vindue').style.display = 'block';
             searchvindue = true;
         } else {
-            document.getElementById('mainVindue').style.display = 'block';
-            createContent(element.id);
+            mainVindue.style.display = 'block';
+            createContentForVindue(element.id);
         }
     }
     
 }
 
-function createContent(contentID) { 
-    if (contentID == 'kirke') { /* Indhold til kirkegården */
-        overskrift.innerHTML = 'Kirkegården';
-        quizzen = overskrift.innerHTML;
-        media.style.display = 'block';
-        media.innerHTML = '<img src="icons/play.png" class="play" id="play">';
-        playbutton = true;
-        tekst.innerHTML = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.';
-        startknap.style.display = 'block';
-    } else if (contentID == 'kloak') { /* Indhold til kloakerne */
-        overskrift.innerHTML = 'Kloakerne';
-        quizzen = overskrift.innerHTML;
-        media.style.display = 'block';
-        tekst.innerHTML = 'Kloakerne kan stadig ses';
-        startknap.style.display = 'block';
-    } else if (contentID == 'leaderboard') {/* Indhold til point-talve og gruppelisten */
+// Indhold til vindue hvis der trykkes på et punkt
+function createContentForPunkt(contentID) {
+    punkt = findInst(contentID); // Find hvilken installation er tilhørende punktet
+    if (punkt) {
+        overskrift.innerHTML = punkt.title;
+        tekst.innerHTML = punkt.description;
+        if (punkt.media) {
+            media.innerHTML = punkt.media_URL;
+            playbutton = punkt.playbutton;
+        }
+        //Tjek hvis der er trykket på quiz 
+        if (!punkt.visit) {
+            startknap.style.display = 'block';
+        } else {
+            startknap.style.display = 'none';
+        }
+    }
+}
+
+// Indhold til point-talve/gruppelisten
+function createContentForVindue(contentID) {
+    if (contentID == 'leaderboard') {
         overskrift.innerHTML = 'Gruppeliste';
         media.style.display = 'none';
         
@@ -88,13 +96,13 @@ function createContent(contentID) {
     } 
     else {
         overskrift.innerHTML = 'Fejl';
-        tekst.innerHTML = 'Dette vindue er endnu ikke oprettet eller der er sket en fejl';
+        tekst.innerHTML = 'Dette vindue er muligvis endnu ikke oprettet eller der er sket en fejl';
     }
 }
 
-function quiz(inst) {
-    overskrift.innerHTML = quizzen;
-    if (document.getElementById('play')) {
+function quiz() {
+    punkt.visit = true;
+    if (punkt.playbutton) {
         document.getElementById('play').style.display = 'none';
     }
     tekst.innerHTML = "Hvad er det rigtige svar for denne installation?"
@@ -102,5 +110,17 @@ function quiz(inst) {
     document.getElementsByClassName('svarmuligheder')[0].style.display = 'flex';
 }
 
+
+function clearPops() {
+    document.getElementsByClassName('svarmuligheder')[0].style.display = 'none';
+    if (searchvindue) {
+        document.getElementById('searchvindue').style.display = 'none';
+        searchvindue = false;
+    }
+    if (playbutton) {
+        document.getElementById('play').style.display = 'none';
+        playbutton = false;
+    }
+}
 
 /*element.src = 'icons/punktgreen.png';*/

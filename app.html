@@ -6,19 +6,20 @@
        <link rel="stylesheet" href="https://use.typekit.net/sgj6hfx.css">
        <title>Login - Flygtningemuseet</title>
        <link href="flugtcss.css" rel="stylesheet" type="text/css">
+       <meta name="Description" content="En lærerig applikation med fokus på grupper, klasser eller skoler. Find spændende historie omkring Flygtningemuseet i Oksbøl. Udviklet af Clara Villumsen og Lone Iversen.">
     </head>
     <body> 
         <div class="map" id="map">
-            <img src="icons/punkt.png" class="punkt" id="kirke" onclick="display(this)">
-            <img src="icons/punkt.png" class="punkt" id="kloak" onclick="display(this)">
+            <img src="icons/punktred.png" class="punkt" id="kirke" onclick="display(this)" alt="Punkt for Kirkegården">
+            <img src="icons/punktred.png" class="punkt" id="kloak" onclick="display(this)" alt="Punkt for Kloakerne">
             
             <!-- Main Window -->
             <div class="window info" id="mainVindue">
-                <h1 id="overskrift"></h1><img class="close" src="icons/x.png" onclick="display(this)">
+                <h1 id="overskrift"></h1><img class="close" src="icons/x.png" onclick="display(this)" alt="Luk ned">
                 <div class="clear"></div>
                 <div class="media" id="media"></div>
                 <div id="tekstindhold"></div>
-                <button class="groenknap" id="startknap" onclick="quiz(this)">Start quiz</button>
+                <button class="groenknap" id="startknap" onclick="quiz()">Start quiz</button>
                 <div class="svarmuligheder">
                     <button class="svar">Svar mulighed 1</button>
                     <button class="svar">Svar mulighed 2</button>
@@ -42,24 +43,29 @@
                    </ul>
                 </div>
                 <input id="searchInput" type="text" class="inputbokse" placeholder="Find oplevelse..." onkeyup="installationsListe()">
-                <img class="close searchclose" src="icons/x.png" onclick="display(this)">
+                <img class="close searchclose" src="icons/x.png" onclick="display(this)" alt="Luk ned">
             </div>
         </div>
         
         <!-- Navigations bars -->
+        <div class="line top">
+            <div>Dit Navn</div>
+            <div><span class="rute nr1"></span> Rute 1 </div>
+            <div>Hjælp</div>
+        </div>
         <div class="bar light top">
-            <img src="img/kloak.png">
-            <img src="img/kors.png">
-            <img src="img/lygtepaele.png">
-            <img src="img/doer.png">
+            <img src="img/kloak.png" alt="Nærmeste punkt: Kloakerne">
+            <img src="img/kors.png" alt="Nærmeste punkt: Kirkengården">
+            <img src="img/lygtepaele.png" alt="Nærmeste punkt: Lygtepæle">
+            <img src="img/doer.png" alt="Nærmeste punkt: Hospital døren">
         </div>        
         <div class="bar light bottom">
-            <img src="icons/search.png" id="search" onclick="display(this)">
-            <img src="icons/star.png" id="leaderboard" onclick="display(this)">
-            <img src="icons/settings.png" id="settings" onclick="display(this)">
+            <img src="icons/search.png" id="search" onclick="display(this)" alt="Søgefunktion">
+            <img src="icons/star.png" id="leaderboard" onclick="display(this)" alt="Point tavle">
+            <img src="icons/settings.png" id="settings" onclick="display(this)" alt="Indstillinger">
         </div>
     </body>
-    <script src="map.js"></script>
+    <script src="visit.js"></script>
     <script src="control.js"></script>
     <script src="search.js"></script>
 </html>
